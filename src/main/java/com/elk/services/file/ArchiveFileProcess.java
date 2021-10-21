@@ -70,6 +70,7 @@ public class ArchiveFileProcess implements FileProcess {
 			unzipFile(processedFile);
 			// Parse file content
 			ArchiveFile archiveFile = readFromInputStream(OUTPUT_DIR);
+			archiveFile.setEndProcessingDate(new Date());
 			javaElasticClient.persiteData(adaptedIndexName, archiveFile);
 
 			// Delete temporar folder  

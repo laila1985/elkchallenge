@@ -12,6 +12,7 @@ import com.elk.tools.Constant;
 import java.io.File;
 import java.io.IOException;
 import java.util.ArrayList;
+import java.util.Date;
 import java.util.List;
 
 
@@ -30,6 +31,8 @@ public class EmailFileProcess implements FileProcess {
         try {
         	javaElasticClient.createIndexIfNotExist(file.getIndexName());
         	MessageFile messageDesc=readFromInputStream(new File(file.getPath()));
+        	messageDesc.setEndProcessingDate(new Date());
+        	
         	
         	if(messageDesc!=null){
         		javaElasticClient.persiteData(file.getIndexName(), messageDesc);
