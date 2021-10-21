@@ -1,0 +1,87 @@
+package com.elk.model;
+
+import java.util.Date;
+import java.util.List;
+
+import com.auxilii.msgparser.attachment.Attachment;
+
+public class MessageFile {
+	 private String fromEmail ;
+	 private String fromName ;
+	 private String subject;
+	 private String body;
+	 private Date startProcessingDate;
+	 private Date endProcessingDate;
+	 
+	 private List<Attachment> attachement ;
+
+	public String getFromEmail() {
+		return fromEmail;
+	}
+
+	public void setFromEmail(String fromEmail) {
+		this.fromEmail = fromEmail;
+	}
+
+	public String getFromName() {
+		return fromName;
+	}
+
+	public void setFromName(String fromName) {
+		this.fromName = fromName;
+	}
+
+	public String getSubject() {
+		return subject;
+	}
+
+	public void setSubject(String subject) {
+		this.subject = subject;
+	}
+
+	public String getBody() {
+		return body;
+	}
+
+	public void setBody(String body) {
+		this.body = body;
+	}
+
+	public List<Attachment> getAttachement() {
+		return attachement;
+	}
+
+	public void setAttachement(List<Attachment> attachement) {
+		this.attachement = attachement;
+	}
+	
+
+	public Date getStartProcessingDate() {
+		return startProcessingDate;
+	}
+
+	public void setStartProcessingDate(Date startProcessingDate) {
+		this.startProcessingDate = startProcessingDate;
+	}
+
+	public Date getEndProcessingDate() {
+		return endProcessingDate;
+	}
+
+	public void setEndProcessingDate(Date endProcessingDate) {
+		this.endProcessingDate = endProcessingDate;
+	}
+
+
+	public MessageFile(String fromEmail, String fromName, String subject, String body) {
+		super();
+		this.fromEmail = fromEmail;
+		this.fromName = fromName;
+		this.subject = subject;
+		this.body = body;
+		this.startProcessingDate= new Date();
+	}
+
+	 
+
+}

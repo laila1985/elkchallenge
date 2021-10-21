@@ -1,0 +1,20 @@
+https://www.graalvm.org/docs/reference-manual/polyglot/
+
+=====================================
+private final static char[] alpha = { 'A', 'B', 'C', 'D', 'E', 'F', 'G', 'H', 'I', 'J', 'K', 'L',
+                            'M', 'N', 'O', 'P', 'Q', 'R', 'S', 'T', 'U', 'V', 'W', 'X', 'Y', 'Z' };
+ 
+public static int foo(String input) {
+  char[] chars = input.toUpperCase().toCharArray();
+  List<?> alphaList = Arrays.asList(alpha);
+  int s = 0;
+  for (char c : chars) {
+    int index = alphaList.indexOf(c);
+    s += (index == -1) ? 0 : index;
+  }
+  return s;
+}
+
+===========================
+
+
