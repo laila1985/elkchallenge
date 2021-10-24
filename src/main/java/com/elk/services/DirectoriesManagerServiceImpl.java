@@ -32,6 +32,8 @@ public class DirectoriesManagerServiceImpl implements DirectoriesManagerService 
             pool.shutdown();
             throw e;
         }
+        
+        
     }
 
 
@@ -45,8 +47,24 @@ public class DirectoriesManagerServiceImpl implements DirectoriesManagerService 
             pool.execute(thread);
             processedThread.add(thread);
         }
-        Constant.LOGGER.fine("[END]: Start processing folders");
+        Constant.LOGGER.fine("[END]: Processing folders");
     }
+
+
+
+
+	@Override
+	public void getPerformanceStatistics() {
+		// TODO Auto-generated method stub
+		
+	}
+
+
+	@Override
+	public void getStatistics() {
+		// TODO Auto-generated method stub
+		
+	}
 
 
 

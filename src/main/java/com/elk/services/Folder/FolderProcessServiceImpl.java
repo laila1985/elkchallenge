@@ -17,26 +17,6 @@ public class FolderProcessServiceImpl implements FolderProcessService {
 	private Tools tools=new Tools();
 
 
-    
-
-
-    @Override
-    public void getStatistics(Folder processedFolder) {
-        Constant.LOGGER.info("===========================================================");
-        Constant.LOGGER.info("====================> Statistic  <=========================");
-        Constant.LOGGER.info("===========================================================");
-        Constant.LOGGER.info("[STATISTIC][FOLDER]:"+processedFolder.getName());
-        Constant.LOGGER.info("[FAILED FILES ]    :"+processedFolder.getFailedProcessedFileCount());
-        Constant.LOGGER.info("[PROCESSED FILES ] :"+processedFolder.getProcessedFileCount());
-        Constant.LOGGER.info("===========================================================");
-
-    }
-
-    @Override
-    public void getPerformanceStatistics() {
-
-    }
-
     @Override
     public void processFolder(Folder processedFolder) throws IOException {
         //Get the process file to be executed :
@@ -61,7 +41,6 @@ public class FolderProcessServiceImpl implements FolderProcessService {
             Constant.LOGGER.fine("[STOPPED]: Processing folder stopped:"+processedFolder.getName());
         }
 
-        getStatistics(processedFolder);
     }
     
     @Override

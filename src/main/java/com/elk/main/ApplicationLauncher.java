@@ -33,6 +33,7 @@ public class ApplicationLauncher {
         }
         try {
             directoriesManagerService.processAllFolders();
+            
         } catch (Exception e) {
             Constant.LOGGER.severe("[WARNING]:Unexcepted exception was thrown"+ e.getMessage());
             System.exit(1);

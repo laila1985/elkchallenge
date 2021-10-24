@@ -9,6 +9,7 @@ import com.elk.tools.Constant;
 import java.awt.image.BufferedImage;
 import java.io.File;
 import java.io.IOException;
+import java.time.LocalDate;
 import java.util.Date;
 
 import javax.imageio.ImageIO;
@@ -41,7 +42,7 @@ public class ImageFileProcess implements FileProcess {
 		// Parse file content
 		BufferedImage myPicture = ImageIO.read(new File(file.getPath()));
 		file.setContent(myPicture.toString());
-		file.setEndProcessingDate(new Date());
+		file.setEndProcessingDate(LocalDate.now());
 
 		return file;
 	}

@@ -1,14 +1,15 @@
 package com.elk.model;
 
 import java.io.File;
+import java.time.LocalDate;
 import java.util.Date;
 import java.util.List;
 
 public class ArchiveFile extends File{
 
 	private String name;
-	private Date startProcessingDate;
-	private Date endProcessingDate;
+	private LocalDate startProcessingDate;
+	private LocalDate endProcessingDate;
 	private String pathName;
 	private Integer processedFileCount = 0;
 	private Integer failedProcessedFileCount=0;
@@ -29,19 +30,19 @@ public class ArchiveFile extends File{
 		this.name = name;
 	}
 
-	public Date getStartProcessingDate() {
+	public LocalDate getStartProcessingDate() {
 		return startProcessingDate;
 	}
 
-	public void setStartProcessingDate(Date startProcessingDate) {
+	public void setStartProcessingDate(LocalDate startProcessingDate) {
 		this.startProcessingDate = startProcessingDate;
 	}
 
-	public Date getEndProcessingDate() {
+	public LocalDate getEndProcessingDate() {
 		return endProcessingDate;
 	}
 
-	public void setEndProcessingDate(Date endProcessingDate) {
+	public void setEndProcessingDate(LocalDate endProcessingDate) {
 		this.endProcessingDate = endProcessingDate;
 	}
 

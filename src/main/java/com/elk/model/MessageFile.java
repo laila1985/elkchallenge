@@ -1,5 +1,6 @@
 package com.elk.model;
 
+import java.time.LocalDate;
 import java.util.Date;
 import java.util.List;
 
@@ -10,8 +11,8 @@ public class MessageFile {
 	 private String fromName ;
 	 private String subject;
 	 private String body;
-	 private Date startProcessingDate;
-	 private Date endProcessingDate;
+	 private LocalDate startProcessingDate;
+	 private LocalDate endProcessingDate;
 	 
 	 private List<Attachment> attachement ;
 
@@ -56,19 +57,19 @@ public class MessageFile {
 	}
 	
 
-	public Date getStartProcessingDate() {
+	public LocalDate getStartProcessingDate() {
 		return startProcessingDate;
 	}
 
-	public void setStartProcessingDate(Date startProcessingDate) {
+	public void setStartProcessingDate(LocalDate startProcessingDate) {
 		this.startProcessingDate = startProcessingDate;
 	}
 
-	public Date getEndProcessingDate() {
+	public LocalDate getEndProcessingDate() {
 		return endProcessingDate;
 	}
 
-	public void setEndProcessingDate(Date endProcessingDate) {
+	public void setEndProcessingDate(LocalDate endProcessingDate) {
 		this.endProcessingDate = endProcessingDate;
 	}
 
@@ -79,7 +80,7 @@ public class MessageFile {
 		this.fromName = fromName;
 		this.subject = subject;
 		this.body = body;
-		this.startProcessingDate= new Date();
+		this.startProcessingDate= LocalDate.now();
 	}
 
 	 

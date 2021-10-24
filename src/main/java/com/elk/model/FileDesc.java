@@ -1,6 +1,7 @@
 package com.elk.model;
 
 import java.io.File;
+import java.time.LocalDate;
 import java.util.Date;
 
 public class FileDesc extends File {
@@ -9,8 +10,8 @@ public class FileDesc extends File {
     private String extension;
     private String status;;
     private String content;
-    private Date startProcessingDate;
-    private Date endProcessingDate;
+    private LocalDate startProcessingDate;
+    private LocalDate endProcessingDate;
     private String path;
     private String indexName;
     
@@ -31,12 +32,15 @@ public class FileDesc extends File {
 	    }
 	    this.indexName="index"+this.name.substring(0,index).toLowerCase().replaceAll("[^\\p{Alpha}\\p{Digit}]+","");
 		this.status=status;
-		this.startProcessingDate=new Date();
+		this.startProcessingDate=LocalDate.now();
 		this.path= file.getAbsolutePath();
 		
 	}
     
-    public FileDesc(String filename, Boolean parent,String parentName) {
+ 
+
+
+	public FileDesc(String filename, Boolean parent,String parentName) {
     	super(filename);
 		this.name = filename;
 		int index = this.name.lastIndexOf('.');
@@ -88,19 +92,19 @@ public class FileDesc extends File {
 		this.content = content;
 	}
 
-	public Date getStartProcessingDate() {
+	public LocalDate getStartProcessingDate() {
 		return startProcessingDate;
 	}
 
-	public void setStartProcessingDate(Date startProcessingDate) {
+	public void setStartProcessingDate(LocalDate startProcessingDate) {
 		this.startProcessingDate = startProcessingDate;
 	}
 
-	public Date getEndProcessingDate() {
+	public LocalDate getEndProcessingDate() {
 		return endProcessingDate;
 	}
 
-	public void setEndProcessingDate(Date endProcessingDate) {
+	public void setEndProcessingDate(LocalDate endProcessingDate) {
 		this.endProcessingDate = endProcessingDate;
 	}
 

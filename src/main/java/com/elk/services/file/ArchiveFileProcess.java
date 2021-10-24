@@ -19,6 +19,7 @@ import java.io.File;
 import java.io.FileInputStream;
 import java.io.FileOutputStream;
 import java.io.IOException;
+import java.time.LocalDate;
 import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.Date;
@@ -64,13 +65,13 @@ public class ArchiveFileProcess implements FileProcess {
 
 			Constant.LOGGER.info("Unzipping file " + file.getName() + "...");
 			//file.setName(file.getName());
-			file.setStartProcessingDate(new Date());
+			file.setStartProcessingDate(LocalDate.now());
 
 			File processedFile = new File(file.getPath());
 			unzipFile(processedFile);
 			// Parse file content
 			ArchiveFile archiveFile = readFromInputStream(OUTPUT_DIR);
-			archiveFile.setEndProcessingDate(new Date());
+			archiveFile.setEndProcessingDate(LocalDate.now());
 			javaElasticClient.persiteData(adaptedIndexName, archiveFile);
 
 			// Delete temporar folder  

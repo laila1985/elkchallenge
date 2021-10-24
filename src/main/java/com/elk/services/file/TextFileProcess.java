@@ -16,6 +16,7 @@ import java.io.InputStream;
 import java.io.InputStreamReader;
 import java.nio.file.Files;
 import java.nio.file.Paths;
+import java.time.LocalDate;
 import java.util.Date;
 import java.util.logging.Logger;
 
@@ -36,7 +37,7 @@ public class TextFileProcess implements FileProcess {
 		
 			// Parse file content
 			FileDesc fileDesc=readFromInputStream(file);
-			fileDesc.setEndProcessingDate(new Date());
+			fileDesc.setEndProcessingDate(LocalDate.now());
 			
 
 			javaElasticClient.persiteData(file.getIndexName(), fileDesc);

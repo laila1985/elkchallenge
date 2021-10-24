@@ -46,7 +46,6 @@ public  class JavaElasticClient {
 	}
 	
 	public static void persiteData(String indexName, FileDesc file) throws IOException{
-		file.setEndProcessingDate(new Date());
 		IndexRequest indexRequest = new IndexRequest(indexName);
         indexRequest.source(new ObjectMapper().writeValueAsString(file), XContentType.JSON);
         IndexResponse indexResponse = CLIENT.index(indexRequest, RequestOptions.DEFAULT);
@@ -54,7 +53,6 @@ public  class JavaElasticClient {
 	}
 	
 	public static void persiteData(String indexName, MessageFile msg) throws IOException{
-		msg.setEndProcessingDate(new Date());
 		IndexRequest indexRequest = new IndexRequest(indexName);
         indexRequest.source(new ObjectMapper().writeValueAsString(msg), XContentType.JSON);
         IndexResponse indexResponse = CLIENT.index(indexRequest, RequestOptions.DEFAULT);
@@ -62,7 +60,6 @@ public  class JavaElasticClient {
 	}
 	
 	public static void persiteData(String indexName, ArchiveFile archiveFile) throws IOException{
-		archiveFile.setEndProcessingDate(new Date());
 		IndexRequest indexRequest = new IndexRequest(indexName);
         indexRequest.source(new ObjectMapper().writeValueAsString(archiveFile), XContentType.JSON);
         IndexResponse indexResponse = CLIENT.index(indexRequest, RequestOptions.DEFAULT);

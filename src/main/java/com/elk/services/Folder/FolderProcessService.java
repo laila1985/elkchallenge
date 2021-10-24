@@ -9,10 +9,6 @@ import java.util.List;
 
 public interface FolderProcessService{
 
-    public  void getStatistics(Folder processedFolder);
-
-    public  void getPerformanceStatistics();
-
 
     void processFolder(Folder processedFolder) throws IOException;
 
